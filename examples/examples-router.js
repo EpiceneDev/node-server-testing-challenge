@@ -4,10 +4,10 @@ const Examples = require('./examples-model.js');
 
 router.get('/', (req, res) => {
   Examples.find()
-    .then(users => {
-      res.json(users);
+    .then(examples => {
+      res.status(200).json(examples);
     })
-    .catch(err => res.send(err));
+    .catch(err => res.status(500).send(err));
 });
 
 module.exports = router;

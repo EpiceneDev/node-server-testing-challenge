@@ -11,7 +11,9 @@ server.use(express.json());
 server.use("/examples", examplesRouter);
 
 server.get("/", (req, res) => {
-  res.send("Server is alive!");
+  res.status(200).json({ api: up });
 });
+
+
 
 module.exports = server;
