@@ -11,7 +11,7 @@ server.use(express.json());
 server.use("/examples", examplesRouter);
 
 server.get("/", (req, res) => {
-  res.status(200).json({ api: up });
+  res.status(200).json({ api: "up" });
 });
 
 

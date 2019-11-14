@@ -11,5 +11,13 @@ describe('server', function() {
                 expect(res.status).toBe(200);
                 });
         });
+
+        it('should return JSON formatted response', function() {
+            return request(server)
+                .get('/')
+                .then(res => {
+                expect(res.type).toMatch(/json/i);
+                })
+        });
     });
 });
