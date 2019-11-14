@@ -19,5 +19,14 @@ describe('server', function() {
                 expect(res.type).toMatch(/json/i);
                 })
         });
+
+        it('should return JSON formatted response', function() {
+            return request(server)
+                .get('/')
+                .then(res => {
+                expect(res.body).toEqual({ api: "up" });
+                expect(res.body.api).toBe("up");
+                })
+        });
     });
 });
