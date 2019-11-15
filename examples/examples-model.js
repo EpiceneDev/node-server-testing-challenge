@@ -1,7 +1,7 @@
 const db = require('../data/dbConfig.js');
 
 module.exports = {
-  add,
+  insert,
   find,
   findBy,
   findById,
@@ -16,10 +16,12 @@ function findBy(filter) {
   return db('examples').where(filter);
 }
 
-async function add(examples) {
-  const [id] = await db('examples').insert(examples);
+async function insert(example) {
+  // const [id] = await db('examples').insert(examples);
 
-  return findById(id);
+  // return findById(id);
+
+  return db('examples').insert(example, "id");
 }
 
 function findById(id) {
